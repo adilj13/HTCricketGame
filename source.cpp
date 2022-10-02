@@ -10,7 +10,7 @@ int randNum();
 int main()
 {
 	cout << "Welcome to HTGame" << endl;
-	int userScore, compScore, tos;
+	int userScore, compScore,tos ;
 	char again,tosss,choice;
 	do
 	{
@@ -60,9 +60,19 @@ int main()
 			{
 				cout << "Its Heads" << endl;
 			}
-			cout << "Comuter Won the Toss and chose to bat first" << endl;
-			compScore = compTurn();
-			userScore = userTurn();
+			choice=rand()%2+1;
+			if(choice==1){
+				cout<<"\nYour Opponent choose to bat first"<<endl;
+				compScore = compTurn();
+			    userScore = userTurn();
+			}else{
+				cout<<"\nYour opponent choose to bowl first "<<endl;
+				userScore = userTurn();
+				compScore = compTurn();
+			}
+			// cout << "Comuter Won the Toss and chose to bat first" << endl;
+			// compScore = compTurn();
+			// userScore = userTurn();
 		}
 		
 		if (compScore>userScore)
@@ -77,13 +87,13 @@ int main()
 		{
 			cout << "\nWell Played\nMatch Tie." << endl;
 		}
-		cout << "Do you want to play again???(Y/N)";
-		cin >> again;
-		while (again != 'y' && again != 'Y' && again != 'n' && again != 'N')
-		{
-			cout << "Do you want to play again???(Y/N)";
-			cin >> again;
-		}
+		// cout << "Do you want to play again???(Y/N)";
+		// cin >> again;
+		// while (again != 'y' && again != 'Y' && again != 'n' && again != 'N')
+		// {
+		// 	cout << "Do you want to play again???(Y/N)";
+		// 	cin >> again;
+		// }
 	} while (again=='y'||again=='Y');
 	cout << "\n\nThanks for playing!\nMade By Adil Aziz."<<endl;
 	cin >> again;
