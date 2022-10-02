@@ -70,9 +70,7 @@ int main()
 				userScore = userTurn();
 				compScore = compTurn();
 			}
-			// cout << "Comuter Won the Toss and chose to bat first" << endl;
-			// compScore = compTurn();
-			// userScore = userTurn();
+			
 		}
 		
 		if (compScore>userScore)
