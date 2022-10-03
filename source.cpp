@@ -7,6 +7,7 @@ bool toss();
 int compTurn();
 int userTurn();
 int randNum();
+void playagain();
 int main()
 {
 	cout << "Welcome to HTGame" << endl;
@@ -85,19 +86,21 @@ int main()
 		{
 			cout << "\nWell Played\nMatch Tie." << endl;
 		}
-		// cout << "Do you want to play again???(Y/N)";
-		// cin >> again;
-		// while (again != 'y' && again != 'Y' && again != 'n' && again != 'N')
-		// {
-		// 	cout << "Do you want to play again???(Y/N)";
-		// 	cin >> again;
-		// }
+		playagain();
 	} while (again=='y'||again=='Y');
 	cout << "\n\nThanks for playing!\nMade By Adil Aziz."<<endl;
 	cin >> again;
 	return 0;
 }
-
+void playagain(){
+	char again;
+	cout << "Do you want to play again? (Y/N)";
+    cin >> again;
+	if (again=='y'||again=='Y')
+	{
+		main();
+	}
+}
 int randNum()
 {
 	int num;
@@ -118,7 +121,9 @@ int compTurn()
 		cin >> userNum;
 		while (userNum>6 || userNum<1)
 		{
-			cout << "Your Number: ";
+			cout << "No ball! 1 score added to opponent's score";
+			score=score +1;
+			cout<<"\nYour number: ";
 			cin >> userNum;
 		}
 		cout << "Computer Number: " << compNum << endl;
@@ -126,9 +131,6 @@ int compTurn()
 	cout << "\nComputer is out!\nComputer\'s Score is " << score << endl;
 	return score;
 }
-
-
-
 int userTurn()
 {
 	int userNum = 0, compNum = 1, score = 0;
@@ -149,8 +151,6 @@ int userTurn()
 	cout << "\nYou are Out!\nYour Score is " << score << endl;
 	return score;
 }
-
-
 bool toss()
 {
 	int result;
